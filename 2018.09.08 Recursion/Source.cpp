@@ -1,7 +1,7 @@
 #include"MyClass.h"
 
-
 int main() {
+	
 	MyClass* pObj = new MyClass;
 	////Task 1
 	//int number = 0;
