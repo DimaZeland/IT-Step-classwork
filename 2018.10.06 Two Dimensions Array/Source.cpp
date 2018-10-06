@@ -5,21 +5,25 @@ using namespace std;
 
 void SetArr(int[][10], int = 10); // set 
 void SetArr1(int[][10], int = 10);
-int** CreateDynamicArr(int = 10); // create 2 dynamic array
-void DeleteDynamicArr(int**, int rouds = 10, int columns = 10); // delete 2 dynamic array
-void SetDynamicArr(int**, int rouds = 10, int columns = 10); // set the value of 2 dynamic array
-void ShowDynamicArr(int**, int rouds = 10, int columns = 10); // set the value of 2 dynamic array
-void ChangeRoudsArr(int**, int firstroud, int secondroud, int rouds = 10, int columns = 10); // change the value of 2 dynamic array
+int** CreateDynamicArr(int = 5); // create 2 dynamic array
+void DeleteDynamicArr(int**, int rouds = 5, int columns = 5); // delete 2 dynamic array
+void SetDynamicArr(int**, int rouds = 5, int columns = 5); // set the value of 2 dynamic array
+void ShowDynamicArr(int**, int rouds = 5, int columns = 5); // set the value of 2 dynamic array
+void ChangeRoudsArr(int**, int firstroud, int secondroud, int rouds = 5, int columns = 5); // change the value of 2 dynamic array
 
 int main() {
 	srand(time(0));
-	int Arr[10][10];
+	//int Arr[10][10];
 	int** pArr = CreateDynamicArr(10);
 	SetDynamicArr(pArr);
-	ChangeRoudsArr(pArr, 0, 9);
+	ChangeRoudsArr(pArr, 0, 4);
+	cout << endl;
 	ShowDynamicArr(pArr);
+	DeleteDynamicArr(pArr);
 
-	system("pause");
+	//system("pause");
+	cout << "DDDDDD";
+	cin.get();
 	return 0;
 }
 
@@ -82,12 +86,8 @@ void ShowDynamicArr(int** Arr, int rouds, int columns) { // set the value of 2 d
 }
 
 void ChangeRoudsArr(int** Arr, int firstroud, int secondroud, int rouds, int columns) { // change the value of 2 dynamic array
-
-	
-	int* buf1 = (*Arr + firstroud);
-	int* buf2 = (*Arr + secondroud);
-	Arr[firstroud] = buf2;
-	Arr[secondroud] = buf1;
+	for (int i = 0; i < columns; ++i)
+		swap(Arr[firstroud][i], Arr[secondroud][i]);
 }
 
 
