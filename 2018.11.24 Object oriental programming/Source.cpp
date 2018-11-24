@@ -1,10 +1,17 @@
 #include<iostream>
+#include<memory>
 #include"Person.h"
+
+
 
 Person Global;
 
 int main() {
-	
+	{
+	std::shared_ptr<Person> Smart(new Person);
+	}
+
+
 	Person* pDynamic = new Person;
 	{
 		Person Dima;
