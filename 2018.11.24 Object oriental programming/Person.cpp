@@ -1,10 +1,5 @@
+//#pragma warning(disable :4996)
 #include "Person.h"
-
-Person::Person(int birth, const char* name, const char* hobby): itsMyBirth(birth){
-	strcpy_s(itsMyName, Person::SIZE, name);
-	strcpy_s(itsMyHobby, Person::SIZE, hobby);
-}
-
 
 bool
 Person::Set_Data() {
@@ -50,10 +45,34 @@ bool
 Person::Input_Birth() {
 	std::cout << "\nEnter Birth: ";
 	std::cin >> itsMyBirth;
+	if (2018 < itsMyBirth or 0 > itsMyBirth)
+		itsMyBirth = 0;
 	return true;
 }
 
 unsigned int
 Person::Get_Birth()const {
 	return itsMyBirth;
+}
+
+void
+Person::Set_itsMyBirth(unsigned int a) {
+	itsMyBirth = (2018 < itsMyBirth or 0 > itsMyBirth) ? 0 : a;
+}
+
+void
+Person::Set_itsMyHobby(const char* a) {
+	strcpy_s(itsMyHobby, Person::SIZE, a);
+}
+
+void
+Person::Set_itsMyName(const char* a) {
+	strcpy_s(itsMyName, Person::SIZE, a);
+}
+
+Person::Person(int birth, const char* name, const char* hobby) : itsMyBirth(birth) {
+	Set_itsMyBirth(birth);
+	Set_itsMyName(name);
+	Set_itsMyHobby(hobby);
+	std::cout << "\nConstructor called!\n";
 }
