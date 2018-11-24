@@ -10,8 +10,11 @@ private:
 	char itsMyHobby[SIZE];
 public:
 	Person(int = 1, const char* = "\nNoName", const char* = "\nNoHobby");
-	~Person(){}
+	~Person() { std::cout << "\nDestructor called!\n"; }
 	bool Set_Data();
+	void Set_itsMyBirth(unsigned int);
+	void Set_itsMyHobby(const char*);
+	void Set_itsMyName(const char*);
 	void Show_Data() const;
 	bool Input_Name();
 	const char* Get_Name()const;
