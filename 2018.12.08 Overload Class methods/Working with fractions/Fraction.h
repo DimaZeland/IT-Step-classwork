@@ -45,6 +45,7 @@ public:
 	Fraction& operator-();
 	bool operator>(const Fraction& two) const;
 	bool operator<(const Fraction& two) const;
+	void reduce();
 };
 // global function
 // method of class
