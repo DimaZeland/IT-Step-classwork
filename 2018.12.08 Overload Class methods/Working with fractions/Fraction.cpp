@@ -104,3 +104,21 @@ Fraction::operator<(const Fraction& two) const {
 	else
 		return false;
 }
+
+void
+Fraction::reduce() {
+	int rest = 0;
+	int Num = num, Denom = denom;
+
+	if (Denom >= Num)
+	do{
+		rest = Denom % Num;
+		if (0 == Num % rest)
+			break;
+	} while (0 != rest);
+
+	num /= rest;
+	denom /= rest;
+
+	std::cout << num  << '/'<< denom << '\n';
+}
