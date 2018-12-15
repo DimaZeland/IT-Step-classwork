@@ -32,6 +32,9 @@ public:
 	static void Input_school();
 	inline int Get_Years() { return 2018 - itsMyBirth; }
 	Person& operator=(const Person&);
+	friend std::ostream& operator<<(std::ostream& os, const Person& one);
+	friend std::istream& operator<<(std::istream& os, Person& one);
+
 };
 
 class Group {
