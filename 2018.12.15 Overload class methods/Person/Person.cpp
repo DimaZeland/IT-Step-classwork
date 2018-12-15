@@ -126,3 +126,25 @@ Person::operator=(const Person & other){
 	}
 	return *this;
 }
+
+std::ostream &
+operator<<(std::ostream & os, const Person & one) {
+	os << "\nBirth: " << one.itsMyBirth << ", first name: " << one.itsMyName << ", second name: " << one.itsMySecondName << std::endl;
+	return os;
+}
+
+std::istream &
+operator>>(std::istream & is, Person & one) {
+	int Birth = 0;
+	char f_name [50]= "\0", s_name [50]= "\0";
+	std::cout << "\nEnter date of birth: ";
+	is >> Birth;
+	one.Set_itsMyBirth(Birth);
+	std::cout << "\nEnter first name: ";
+	is >> f_name;
+	one.Set_itsMyName(f_name);
+	std::cout << "\nEnter first name: ";
+	is >> s_name;
+	one.Set_SecondName(s_name);
+	return is;
+}
