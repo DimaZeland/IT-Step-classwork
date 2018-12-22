@@ -2,15 +2,22 @@
 
 
 
-Sheep::Sheep(std::string  Name, unsigned short Year){
+Sheep::Sheep(std::string  Name, unsigned short Year, unsigned int turb): Vehicle(), turbines(turb){
 	Set_name(Name);
 	Set_year(Year);
-	std::cout << "Ctor called!";
+	std::cout << "\n Sheep Ctor called!\n";
+}
+
+Sheep::Sheep(unsigned int turb, std::string Vendor, double Speed, std::string Name, unsigned short Year)
+	: Vehicle(Vendor, Speed){
+	Set_name(Name);
+	Set_year(Year);
+	std::cout << "\n Sheep Ctor called!\n";
 }
 
 
 Sheep::~Sheep() {
-	std::cout << "Dtor called!";
+	std::cout << "\nSheep Dtor called!\n";
 }
 
 bool
@@ -52,8 +59,26 @@ Sheep::Input_name(){
 	return Set_name(name);
 }
 
+void
+Sheep::Print(){
+	this->Vehicle::Print();
+	std::cout << "\nName: " << Get_name() << ", year: " << Get_year() << std::endl;
+}
+
 std::ostream &
 operator<<(std::ostream & os, const Sheep & sheep){
 	os << "\nName: " << sheep.Get_name() << ", year: " << sheep.Get_year() << std::endl;
 	return os;
+}
+
+void
+Car::Print(){
+	this->Vehicle::Print();
+	std::cout << "\nPower: " << power << std::endl;
+}
+
+void Amphibia::Print(){
+	Vehicle::Print();
+	std::cout << "\nName: " << Get_name() << ", year: " << Get_year() << std::endl;
+	std::cout << "\nPower: " << power << std::endl;
 }
