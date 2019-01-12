@@ -1,5 +1,8 @@
 #pragma once
 
+// https://refactoring.guru/ru/design-patterns/abstract-factory
+//++ singleTon for factory
+
 #include<iostream>
 #include<string>
 
