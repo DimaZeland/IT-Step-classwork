@@ -3,8 +3,7 @@
 #include<iostream>
 #include<string>
 
-class Animal
-{
+class Animal abstract{
 protected:
 	std::string Nick = "No Nick";
 	unsigned int Age = 1;
@@ -16,8 +15,8 @@ public:
 	inline std::string Get_Nick()const { return Nick; }
 	inline unsigned int Get_Age()const { return Age; }
 	void Print(void)const;
-	virtual std::string Sound(void)const;
-	virtual std::string Type(void)const;
+	virtual std::string Sound(void)const = 0;
+	virtual std::string Type(void)const abstract;
 };
 
 class Cat : public Animal {
