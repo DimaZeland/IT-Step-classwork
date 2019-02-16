@@ -18,6 +18,8 @@ int main() {
 	std::vector <int> v1, v2;
 	std::copy(arr.begin(), arr.begin() + arr.size() / 2, v1);
 	std::copy(arr.begin() + arr.size()+1,arr.end(), v2);
+	 // //std::_Array_iterator<int, 12> buf = arr.begin();// +(arr.size() / 2);
+	
 	//3
 	std::random_shuffle(v1.begin(), v1.end());
 	std::random_shuffle(v2.begin(), v2.end());
@@ -49,8 +51,8 @@ int main() {
 	
 	
 	//std::ofstream fout;
-	//fout.open("cppstudio.txt"); // ñâÿçûâàåì îáúåêò ñ ôàéëîì
-	//	fout << "Ğàáîòà ñ ôàéëàìè â Ñ++"; // çàïèñü ñòğîêè â ôàéë
+	//fout.open("cppstudio.txt"); // Ã±Ã¢Ã¿Ã§Ã»Ã¢Ã Ã¥Ã¬ Ã®Ã¡ÃºÃ¥ÃªÃ² Ã± Ã´Ã Ã©Ã«Ã®Ã¬
+	//	fout << "ÃÃ Ã¡Ã®Ã²Ã  Ã± Ã´Ã Ã©Ã«Ã Ã¬Ã¨ Ã¢ Ã‘++"; // Ã§Ã Ã¯Ã¨Ã±Ã¼ Ã±Ã²Ã°Ã®ÃªÃ¨ Ã¢ Ã´Ã Ã©Ã«
 	//fout.close();
 	
 	
@@ -202,7 +204,7 @@ void CreateFile(std::string FileName) {
 //	//f << flush;
 //	Line
 //
-//		if (f.seekp(-10, ios::end)) // ïåğåì³ñòèëè âêàç³âíèê ó ôàéë³ äëÿ çàïèñó íà -10 áàéò â³äíîñíî îçíàêè çàâåğøåííÿ ôàéëó
+//		if (f.seekp(-10, ios::end)) // Ã¯Ã¥Ã°Ã¥Ã¬Â³Ã±Ã²Ã¨Ã«Ã¨ Ã¢ÃªÃ Ã§Â³Ã¢Ã­Ã¨Ãª Ã³ Ã´Ã Ã©Ã«Â³ Ã¤Ã«Ã¿ Ã§Ã Ã¯Ã¨Ã±Ã³ Ã­Ã  -10 Ã¡Ã Ã©Ã² Ã¢Â³Ã¤Ã­Ã®Ã±Ã­Ã® Ã®Ã§Ã­Ã ÃªÃ¨ Ã§Ã Ã¢Ã¥Ã°Ã¸Ã¥Ã­Ã­Ã¿ Ã´Ã Ã©Ã«Ã³
 //		{
 //			f.put('*'); //f << '*';
 
